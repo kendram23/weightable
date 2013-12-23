@@ -4,5 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  include Amistad::FriendModel       
+  include Amistad::FriendModel   
+  
+  has_many :weigh_ins
+  has_many :truckins through :weigh_ins    
 end
