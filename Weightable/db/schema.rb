@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131223020224) do
+ActiveRecord::Schema.define(version: 20131223181337) do
 
   create_table "friendships", force: true do |t|
     t.integer "friendable_id"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20131223020224) do
     t.datetime "updated_at"
     t.integer  "start_weight"
     t.integer  "goal_weight"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
