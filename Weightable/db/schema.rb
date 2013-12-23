@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131223010049) do
+ActiveRecord::Schema.define(version: 20131223020224) do
+
+  create_table "friendships", force: true do |t|
+    t.integer "friendable_id"
+    t.integer "friend_id"
+    t.integer "blocker_id"
+    t.boolean "pending",       default: true
+  end
+
+  add_index "friendships", ["friendable_id", "friend_id"], name: "index_friendships_on_friendable_id_and_friend_id", unique: true
+
+  create_table "truckins", force: true do |t|
+    t.integer  "users_id"
+    t.integer  "weigh_ins_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -33,8 +49,8 @@ ActiveRecord::Schema.define(version: 20131223010049) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
-  create_table "weign_ins", force: true do |t|
-    t.integer  "Users_id"
+  create_table "weigh_ins", force: true do |t|
+    t.integer  "users_id"
     t.datetime "datetime"
     t.integer  "current_weight"
     t.datetime "created_at"
