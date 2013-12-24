@@ -7,5 +7,10 @@ class User < ActiveRecord::Base
   include Amistad::FriendModel   
   
   has_many :weigh_ins
-  has_many :truckins, through: :weigh_ins    
+  has_many :truckins, through: :weigh_ins
+
+  def name
+    "#{first_name} #{last_name}"
+  end
+
 end

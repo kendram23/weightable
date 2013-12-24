@@ -1,1 +1,7 @@
-<%= User.
+<%= @user.name %>
+
+<%= @user.each do |weigh_in| %>
+  Today's weight: <%= weigh_in.current_weight %>
+  Today's date: <%= weigh_in.created_at %>
+<% end %>
+
