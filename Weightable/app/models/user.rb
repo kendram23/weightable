@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
+  def current_weight
+    weigh_ins.last.current_weight - goal_weight
+  end
+
 end

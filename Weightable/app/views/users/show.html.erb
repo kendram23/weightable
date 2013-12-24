@@ -1,7 +1,19 @@
+<img src="https://scontent-b-ord.xx.fbcdn.net/hphotos-prn2/v/1528094_641823244484_91406853_n.jpg?oh=986dbd5d8343e0c367da6988c2dafdd6&oe=52BBFC28" >
+
+</br>
 <%= @user.name %>
 
-<%= @user.weigh_ins.each do |weigh_in| %>
-  Today's weight: <%= weigh_in.current_weight %>
+</br>
+I've got <%= @user.current_weight %> lbs to go and I'm gettin' er done!
+
+About
+
+
+
+</br>
+<% @user.weigh_ins.each do |weigh_in| %>
+  Today's weight: <%= weigh_in.current_weight %> </br>
   Today's date: <%= weigh_in.created_at %>
+</br>
 <% end %>
 
