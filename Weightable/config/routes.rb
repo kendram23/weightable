@@ -1,7 +1,8 @@
 Weightable::Application.routes.draw do
   devise_for :users
 
-  get 'users/:id' => 'users#show', as: 'user'
-  get 'weigh_in/new' => 'weigh_in#new', as 'new_weigh_in'
+  resources :users, only: [:show, :index] do
+    resources :weigh_ins, only: :show
+  end
 
 end
