@@ -4,5 +4,8 @@ Weightable::Application.routes.draw do
   resources :users, only: [:show, :index] do
     resources :weigh_ins, only: [:new, :create]
   end
+  
+  get 'users/test' => 'users#test'
+
 
 end

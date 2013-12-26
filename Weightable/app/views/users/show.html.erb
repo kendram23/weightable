@@ -12,8 +12,11 @@ About
 
 </br>
 <% @user.weigh_ins.each do |weigh_in| %>
-  Today's weight: <%= weigh_in.current_weight %> </br>
-  Today's date: <%= weigh_in.created_at %>
+  <% if weigh_in.created_at.to_date == Date.today %>
+    Today's weight: <%= weigh_in.current_weight %>
+  <% else %>
+   <%= weigh_in.created_at.to_formatted_s(:short) %>: <%= weigh_in.current_weight %>
+  <% end %>
 </br>
 <% end %>
 

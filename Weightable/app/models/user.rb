@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   include Amistad::FriendModel   
   
-  has_many :weigh_ins
+  has_many :weigh_ins, :order => 'created_at DESC'
   has_many :truckins, through: :weigh_ins
 
   def name
