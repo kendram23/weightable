@@ -8,4 +8,7 @@ class UsersController < ActionController::Base
     @users = User.all
   end
 
+  def test
+  end
+  
 end
