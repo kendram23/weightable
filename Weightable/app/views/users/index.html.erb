@@ -1,0 +1,8 @@
+Weightable Users
+</br>
+<%= will_paginate @users %>
+<% @users.each do |user| %>
+  <%= user.name %>
+  <%= user.about %>
+</br>
+<% end %>
