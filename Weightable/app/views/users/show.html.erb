@@ -1,0 +1,22 @@
+<img src="https://scontent-b-ord.xx.fbcdn.net/hphotos-prn2/v/1528094_641823244484_91406853_n.jpg?oh=986dbd5d8343e0c367da6988c2dafdd6&oe=52BBFC28" >
+
+</br>
+<%= @user.name %>
+
+</br>
+I've got <%= @user.current_weight %> lbs to go and I'm gettin' er done!
+
+</br>
+About
+<%= @user.about %>
+
+</br>
+<% @user.weigh_ins.each do |weigh_in| %>
+  <% if weigh_in.created_at.to_date == Date.today %>
+    Today's weight: <%= weigh_in.current_weight %>
+  <% else %>
+   <%= weigh_in.created_at.to_formatted_s(:short) %>: <%= weigh_in.current_weight %>
+  <% end %>
+</br>
+<% end %>
+
