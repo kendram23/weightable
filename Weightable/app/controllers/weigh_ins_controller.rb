@@ -6,11 +6,11 @@ class WeighInsController < ActionController::Base
   def new
     @weigh_in = WeighIn.new
     @weigh_in.user_id = current_user.id
-    user = User.find(current_user)
+    @user = User.find(current_user)
   end
 
   def create
-    @weigh_in = WeighIn.new(weigh_in_params)
+    @weigh_in = current_user.weigh_ins.build(weigh_in_params)
     
     respond_to do |format|
       if @weigh_in.save
