@@ -5,16 +5,22 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   include Amistad::FriendModel   
+ 
+  has_many :weigh_ins, :order => 'created_at DESC' do
   
-  has_many :weigh_ins
+    def today
+      where(:created_at => (Time.now.beggining_of_day..Time.now))
+    end
+  end
+  
   has_many :truckins, through: :weigh_ins
 
   def name
     "#{first_name} #{last_name}"
   end
 
-  def current_weight
-    weigh_ins.last.current_weight - goal_weight
+  def weight_until_goal
+    weigh_ins.first.current_weight - goal_weight
   end
 
 end

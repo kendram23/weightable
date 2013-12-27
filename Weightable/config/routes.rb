@@ -1,7 +1,7 @@
 Weightable::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
-  get 'users/test' => 'users#test'
-  get 'users/:id' => 'users#show', as: 'user'
-
+  resources :users, only: [:show, :index, :edit]
+  resources :weigh_ins, only: [:new, :create, :show]
+  
 end

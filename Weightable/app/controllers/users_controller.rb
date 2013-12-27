@@ -1,14 +1,17 @@
-class UsersController < ActionController::Base
+class UsersController < ApplicationController
 
-  def show
+def show
     @user = User.find(params[:id])
-  end
+end
 
-  def index
-    @users = User.all
-  end
 
-  def test
-  end
+def index
+	@users = User.paginate(:page => params[:page], :per_page => 20)
+end
+
+
+def test
+
+end
   
 end
