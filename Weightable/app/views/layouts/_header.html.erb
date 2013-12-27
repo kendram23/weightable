@@ -9,6 +9,9 @@
           <span class="icon-bar"></span>
         </button>
           <a class="navbar-brand" href="/users">Who's On The Road?</a>
+          <% if current_user == @user %>
+            <%= link_to 'Edit Profile', edit_user_path(current_user.id), {:class => 'navbar-brand'} %>
+          <% end %>
       </div>
       <!-- sign out link on the right side -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
