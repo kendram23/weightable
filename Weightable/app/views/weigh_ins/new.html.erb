@@ -1,8 +1,10 @@
-<%= form_for [@user, @weigh_in] do |f| %>
+<%= form_for @weigh_in do |f| %>
 
   <%= f.label :current_weight %>
   <%= f.text_field :current_weight %>
 
-<%= f.submit %>
+  <% f.hidden_field :user_id %>
+
+  <%= f.submit %>
 
 <% end %>

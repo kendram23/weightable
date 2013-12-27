@@ -1,9 +1,8 @@
 Weightable::Application.routes.draw do
   devise_for :users
 
-  resources :users, only: [:show, :index] do
-    resources :weigh_ins, only: [:new, :create]
-  end
+  resources :users, only: [:show, :index]
+  resources :weigh_ins, only: [:new, :create]
   
   get 'users/test' => 'users#test'
 
