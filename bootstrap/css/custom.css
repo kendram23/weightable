@@ -1,5 +1,5 @@
   * {
-    /*border: green 1px solid;*/
+    border: green 1px solid;
   }
   body {
     color: #513c0b;
@@ -19,6 +19,7 @@
   .status {
     text-align: center;
     font-size: 40px;
+    /*media querie*/
   }
   /*large button*/
   .weight-check-btn {
