@@ -5,8 +5,14 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   include Amistad::FriendModel   
+ 
+  has_many :weigh_ins, :order => 'created_at DESC' do
   
-  has_many :weigh_ins, :order => 'created_at DESC'
+    def today
+      where(:created_at => (Time.now.beggining_of_day..Time.now))
+    end
+  end
+  
   has_many :truckins, through: :weigh_ins
 
   def name
