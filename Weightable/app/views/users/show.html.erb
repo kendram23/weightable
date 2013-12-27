@@ -1,22 +1,76 @@
-<img src="https://scontent-b-ord.xx.fbcdn.net/hphotos-prn2/v/1528094_641823244484_91406853_n.jpg?oh=986dbd5d8343e0c367da6988c2dafdd6&oe=52BBFC28" >
-
-</br>
-<%= @user.name %>
-
-</br>
-I've got <%= @user.current_weight %> lbs to go and I'm gettin' er done!
-
-</br>
-About
-<%= @user.about %>
-
-</br>
+<!-- row 1 -->
+  <div class="row first">
+    <div class="col-xs-4 col-lg-3">
+      <!-- profile pic -->
+      <div>
+        <img src="http://placekitten.com/255/300" class="img-responsive" alt="Responsive image">
+      </div>
+      <!-- user's name -->
+      <div class="name"><p><%= @user.name %></p>
+      </div>
+    </div>
+    <div class="col-xs-8 col-lg-9">
+      <!-- Status statement -->
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="status">
+            I've got <%= @user.weight_until_goal %> lbs to go and I'm gettin' er done!
+          </h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 weight-check-btn">
+          <img src = "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTegOpHN8p5sWDIibx9Tsptu3KO-WfG95mdzP8JlJFNIVzbS7zo">
+        </div>
+      </div>
+    </div> 
+  </div>
+<!-- row 2 -->
 <% @user.weigh_ins.each do |weigh_in| %>
-  <% if weigh_in.created_at.to_date == Date.today %>
-    Today's weight: <%= weigh_in.current_weight %>
-  <% else %>
-   <%= weigh_in.created_at.to_formatted_s(:short) %>: <%= weigh_in.current_weight %>
-  <% end %>
-</br>
-<% end %>
+  <div class="row">
+    <div class="col-lg-9 col-lg-push-3">
+      <!-- post 1 -->
+      <div class="row post">
+        <!-- post image -->
+        <div class="col-xs-2 col-lg-4">
+          <img src="http://placekitten.com/250/150">
+        </div>
+        <!-- post content -->
+        <div class="col-xs-10 col-lg-8">
+          <!-- weight update -->
+          <div class="row">
+            <div class="col-lg-12">
+              <p>
+                <% if weigh_in.created_at.to_date == Date.today %>
+                    Today I weighed <%= weigh_in.current_weight %> lbs!
+                <% else %>
+                  On <%= weigh_in.created_at.to_formatted_s(:short) %> I weighed <%= weigh_in.current_weight %> lbs.
+                <% end %>
+              </p>
+            </div>
+          </div>
+          <!-- keep on truckin -->
+          <div class="row keep-on">
+            <div class="col-lg-9">
+              <p class="keep-on"><strong>6</strong> buckaroos have said "Keep on Truckin!"</p>
+            </div>
+            <div class="col-lg-3">
+              <button type="button" class="btn btn-sm keep-on">Keep On Truckin!</button>
+            </div>
+          </div> <!-- end keep on truckin -->
+        </div> <!-- end post content -->
+      </div> <!-- end post -->
+    </div>
+  </div>
+    <% end %>
+<!-- start user about section -->
+  <div class="col-lg-3 col-lg-pull-9 hidden-xs">
+      <h3>About <%= @user.first_name %></h3>
+      <p><%= @user.about %></p>
+  </div>
+</div>
+
+
+
+
 
