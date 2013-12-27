@@ -1,0 +1,22 @@
+<%= form_for @user do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+  </br>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+  </br>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  </br>
+  <%= f.label :start_weight %>
+  <%= f.text_field :start_weight %>
+  </br>
+    <%= f.label :goal_weight %>
+  <%= f.text_field :goal_weight %>
+  </br>
+    <%= f.label :about %>
+  <%= f.text_field :about %>
+  </br>
+
+  <%= f.submit %>
+<% end %>

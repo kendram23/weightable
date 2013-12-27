@@ -2,7 +2,7 @@ Weightable Users
 </br>
 <%= will_paginate @users %>
 <% @users.each do |user| %>
-  <%= user.name %>
+  <%= link_to user.name, user_path(user.id) %>
   <%= user.about %>
 </br>
 <% end %>
