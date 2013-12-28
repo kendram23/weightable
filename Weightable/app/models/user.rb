@@ -4,7 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  include Amistad::FriendModel   
+  include Amistad::FriendModel
+
+  mount_uploader :user_image, ImageUploader
  
   has_many :weigh_ins, :order => 'created_at DESC' do
   

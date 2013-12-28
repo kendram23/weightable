@@ -3,7 +3,7 @@
     <div class="col-xs-4 col-lg-3">
       <!-- profile pic -->
       <div>
-        <img src="http://placekitten.com/255/300" class="img-responsive" alt="Responsive image">
+        <%= image_tag @user.user_image %>
       </div>
       <!-- user's name -->
       <div class="name"><p><%= @user.name %></p>
@@ -46,7 +46,7 @@
                 <% if weigh_in.created_at.to_date == Date.today %>
                     Today I weighed <%= weigh_in.current_weight %> lbs!
                 <% else %>
-                  On <%= weigh_in.created_at.to_formatted_s(:short) %> I weighed <%= weigh_in.current_weight %> lbs.
+                  On <%= weigh_in.created_at.to_formatted_s(:short) %> I weighed <%= weigh_in.current_weight %> lbs
                 <% end %>
               </p>
             </div>

@@ -27,7 +27,11 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+# Use Devise for user authentication and sign_in
 gem 'devise'
+
+# Use Carrierwave for user photo uploads
+gem 'carrierwave'
 
 gem 'amistad'
 

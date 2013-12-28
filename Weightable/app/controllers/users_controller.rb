@@ -5,7 +5,6 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
   end
 
-
   def index
   	@users = User.paginate(:page => params[:page], :per_page => 20)
   end
@@ -28,7 +27,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :about, :start_weight, :goal_weight)
+      params.require(:user).permit(:first_name, :last_name, :email, :about, :start_weight, :goal_weight, :user_image)
     end
 
 end
