@@ -30,8 +30,9 @@ gem 'jbuilder', '~> 1.2'
 # Use Devise for user authentication and sign_in
 gem 'devise'
 
-# Use Carrierwave for user photo uploads
+# Use Carrierwave for user photo uploads and Rmagick for photo sizing
 gem 'carrierwave'
+gem 'rmagick'
 
 gem 'amistad'
 
