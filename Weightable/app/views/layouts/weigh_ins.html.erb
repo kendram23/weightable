@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+      <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+      <%= csrf_meta_tags %>
+        <meta charset="UTF-8">
+        <!-- scale screens correctly -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weightable</title>
+
+        <!-- put in font awesome -->
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    </head>
+<body>
+  <div class="container">
+  <%= render 'layouts/header' %>
+    <%= yield %>
+  </div> <!-- close container -->
+
+</body>
+</html>

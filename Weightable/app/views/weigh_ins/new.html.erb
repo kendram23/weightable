@@ -1,10 +1,21 @@
-<%= form_for @weigh_in do |f| %>
+<div class="row">
+  <div class="col-lg-4">
+    <img href="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTegOpHN8p5sWDIibx9Tsptu3KO-WfG95mdzP8JlJFNIVzbS7zo">
+  </div>
+  <div class="col-lg-8">
+    <div class="weigh_in_header">
+      <h1> Time for a Weight Check!</h2>
+    </div>
+    <div class="weigh_in-form">
+      <%= form_for @weigh_in do |f| %>
 
-  <%= f.label :current_weight %>
-  <%= f.text_field :current_weight %>
+        <%= f.label "How much do you weigh today?" %><br />
+        <%= f.text_field :current_weight %>
 
-  <% f.hidden_field :user_id %>
+        <% f.hidden_field :user_id %>
 
-  <%= f.submit %>
+        <%= f.submit "submit" %>
 
-<% end %>
+      <% end %>
+    </div>
+  </div>
