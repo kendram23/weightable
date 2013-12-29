@@ -16,6 +16,8 @@
           <h2 class="status">
             <% if @user.weigh_ins.count != nil && @user.goal_weight != nil %>
               I've got <%= @user.weight_until_goal %> lbs to go and I'm gettin' er done!
+            <% elsif current_user.id != @user.id %>
+              <%= @user.first_name %> hasn't added a goal weight yet. Maybe <%= @user.first_name %> needs some encouragement!
             <% else %>
               Add a goal weight!
             <% end %>
