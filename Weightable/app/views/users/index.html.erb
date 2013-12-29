@@ -2,7 +2,12 @@ Weightable Users
 </br>
 <%= will_paginate @users %>
 <% @users.each do |user| %>
+  <div>
+        <%= image_tag user.user_image %>
+  </div>
   <%= link_to user.name, user_path(user.id) %>
+</br>
   <%= user.about %>
 </br>
+<p>_____________________________________</p>
 <% end %>

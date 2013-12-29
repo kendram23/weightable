@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   include Amistad::FriendModel
  
+  has_many :truckins, through: :weigh_ins
+
   has_many :weigh_ins, :order => 'created_at DESC' do
   
   # Used to determine the goal in the weighin model
@@ -15,7 +17,10 @@ class User < ActiveRecord::Base
     end
   end
   
-  has_many :truckins, through: :weigh_ins
+  #validations
+
+  validates :start_weight, :goal_weight, :first_name, :last_name, :about, presence: true
+ 
 
   # Sets the full name of the user
 
@@ -24,7 +29,7 @@ class User < ActiveRecord::Base
   end
 
   # Checks to see if user has added goal weight and checkins
-  # 
+  # and then
   # Displays the weight to go until user meets current goal
 
   def weight_until_goal
