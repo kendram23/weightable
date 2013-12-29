@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def show
-      @user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def index
@@ -29,12 +29,6 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :about, :start_weight, :goal_weight, :user_image)
-    end
-
-    # Check that user is logged in
-    # Prompt sign_in if not
-    def authenticate
-      deny_access unless signed_in?
     end
 
 end
