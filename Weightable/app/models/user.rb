@@ -22,7 +22,11 @@ class User < ActiveRecord::Base
   end
 
   def weight_until_goal
-    weigh_ins.first.current_weight - goal_weight
+    if weigh_ins.count > 0 && goal_weight > 0
+      weigh_ins.first.current_weight - goal_weight
+    elsif goal_weight > 0
+      start_weight - goal_weight
+    end
   end
 
 end

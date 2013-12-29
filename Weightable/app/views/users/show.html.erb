@@ -14,7 +14,11 @@
       <div class="row">
         <div class="col-xs-12">
           <h2 class="status">
-            I've got <%= @user.weight_until_goal %> lbs to go and I'm gettin' er done!
+            <% if @user.weigh_ins.count == 0 && @user.goal_weight > 0 %>
+              I've got <%= @user.weight_until_goal %> lbs to go and I'm gettin' er done!
+            <% else %>
+              Add a goal weight!
+            <% end %>
           </h2>
         </div>
       </div>
