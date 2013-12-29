@@ -5,11 +5,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   include Amistad::FriendModel
-
-  mount_uploader :user_image, ImageUploader
  
   has_many :weigh_ins, :order => 'created_at DESC' do
   
+  # Used to determine the goal in the weighin model
+  # Will allow user to only post 1/day
     def today
       where(:created_at => (Time.now.beggining_of_day..Time.now))
     end
@@ -17,9 +17,15 @@ class User < ActiveRecord::Base
   
   has_many :truckins, through: :weigh_ins
 
+  # Sets the full name of the user
+
   def name
     "#{first_name} #{last_name}"
   end
+
+  # Checks to see if user has added goal weight and checkins
+  # 
+  # Displays the weight to go until user meets current goal
 
   def weight_until_goal
     if weigh_ins.count > 0 && goal_weight > 0
@@ -28,5 +34,9 @@ class User < ActiveRecord::Base
       start_weight - goal_weight
     end
   end
+
+  # Allows user to upload a profile image
+  
+  mount_uploader :user_image, ImageUploader
 
 end

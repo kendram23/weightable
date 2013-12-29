@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.for(:sign_up) << field
     end
   end
+
+  def after_sign_in_path_for(resource)
+    edit_user_path(current_user.id)  
+  end
 end
