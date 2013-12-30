@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131227235921) do
+ActiveRecord::Schema.define(version: 20131230180229) do
 
   create_table "friendships", force: true do |t|
     t.integer "friendable_id"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20131227235921) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "weigh_in_image"
   end
 
   add_index "weigh_ins", ["user_id"], name: "index_weigh_ins_on_user_id"
