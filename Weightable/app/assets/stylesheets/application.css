@@ -17,3 +17,11 @@
 	border-color: red;
 
  }
+
+
+
+body {
+  border-image: url(http://th09.deviantart.net/fs70/PRE/i/2013/173/0/7/wood_texture_by_mxronin-d6a7w5x.jpg) 2% ;
+  border-width: 35px;
+
+}
