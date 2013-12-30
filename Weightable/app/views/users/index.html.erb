@@ -1,4 +1,19 @@
-Weightable Users
+
+<head>
+<link href='http://fonts.googleapis.com/css?family=Alegreya+SC:400,900italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<div id= "index_background">
+<div id= "index_text_background"
+<strong><h1>THE GANG</h1></strong>
+</div>
+</div>
+
+</br>
+</br>
+</br>
+
 </br>
 <%= will_paginate @users %>
 <% @users.each do |user| %>
@@ -6,13 +21,19 @@ Weightable Users
   <div>
         <%= image_tag user.user_image %>
   </div>
+</br>
 <div class= "index_user">  
   <%= link_to user.name, user_path(user.id) %>
 </br>
   <%= user.about.truncate(50) %>
 </br>
 </div>
+<% if user != @users.last%>
 <p>_____________________________________</p>
-
+<%else%>
+</br>
+</br>
+<% end%>
 <% end %>
+</body>
 
