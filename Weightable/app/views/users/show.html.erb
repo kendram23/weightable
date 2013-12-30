@@ -6,7 +6,7 @@
         <% if @user.user_image.present? %>
             <%= image_tag @user.user_image %>
         <% else %>
-          <img src="http://dummyimage.com/250x300&text=Add a profile picture!" alt="" /> 
+          <img src="http://dummyimage.com/250x300&text=Add a profile picture!" alt="User Profile" /> 
         <% end %>
       </div>
       <!-- user's name -->
@@ -45,7 +45,7 @@
       <div class="row post">
         <!-- post image -->
         <div class="col-xs-2 col-lg-4">
-          <img src="http://placekitten.com/250/150">
+          <%= image_tag weigh_in.weigh_in_image.url(:thumb) %>
         </div>
         <!-- post content -->
         <div class="col-xs-10 col-lg-8">
