@@ -4,7 +4,7 @@
       <!-- profile pic -->
       <div>
         <% if @user.user_image.present? %>
-            <%= image_tag @user.user_image %>
+            <%= image_tag @user.user_image.url(:medium).to_s %>
         <% else %>
           <img src="http://dummyimage.com/250x300&text=Add a profile picture!" alt="User Profile" /> 
         <% end %>
@@ -81,3 +81,4 @@
       <p><%= @user.about %></p>
   </div>
 </div>
+
