@@ -25,6 +25,6 @@ class WeighInsController < ActionController::Base
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def weigh_in_params
-      params.require(:weigh_in).permit(:current_weight, :user_id)
+      params.require(:weigh_in).permit(:current_weight, :weigh_in_image, :user_id)
     end
 end
