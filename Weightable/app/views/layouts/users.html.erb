@@ -1,22 +1,36 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
       <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
       <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
       <%= csrf_meta_tags %>
-        <meta charset="UTF-8">
+      <meta charset="UTF-8">
         <!-- scale screens correctly -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Weightable</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Weightable | Weightloss for Men</title>
 
-        <!-- put in font awesome -->
-        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+      <!-- put in font awesome -->
+      <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+      <!-- allow usage of Vex -->
+      <script src="vex.js"></script>
+      <link href="vex.css" rel="stylesheet" type="text/css">
+      <link href="vex-theme-default.css" rel="stylesheet" type="text/css">
     </head>
 <body>
   <div class="container">
-  <%= render 'layouts/header' %>
+
+    <%= render 'layouts/header' %>
+    <% if notice || alert %>
+
+      <p class=”notice”><%= notice %></p>
+
+      <p class=”alert”><%= alert %></p>
+
+    <% end %>
+
     <%= yield %>
+
   </div> <!-- close container -->
 
 </body>

@@ -12,6 +12,9 @@
         <%= f.label "How much do you weigh today?" %><br />
         <%= f.text_field :current_weight %>
 
+        <%= f.label :weigh_in_image %>
+        <%= f.file_field :weigh_in_image %>
+
         <% f.hidden_field :user_id %>
 
         <%= f.submit "submit" %>
