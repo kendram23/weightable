@@ -55,8 +55,18 @@
     background-color: #886C30;
   }
   /*post image*/
+  .post-pic {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-left: 1px;
+    padding: 0px;
+    border: #886C30 solid 2px;
+    width: 148px;
+    height: 148px;
+  }
   .post img {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px;
+    height: 100%;
+    width: 100%;
   }
 
