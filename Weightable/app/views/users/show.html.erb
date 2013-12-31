@@ -38,9 +38,9 @@
     </div> 
   </div>
 <!-- row 2 -->
-<% @user.weigh_ins.each do |weigh_in| %>
-  <div class="row">
-    <div class="col-lg-9 col-lg-push-3">
+<div class="row">
+  <div class="col-lg-9 col-lg-push-3">
+    <% @user.weigh_ins.each do |weigh_in| %>
       <!-- post 1 -->
       <div class="row post">
         <!-- post image -->
@@ -72,11 +72,10 @@
           </div> <!-- end keep on truckin -->
         </div> <!-- end post content -->
       </div> <!-- end post -->
-    </div>
-  </div>
     <% end %>
+  </div>
 <!-- start user about section -->
-  <div class="col-lg-3 col-lg-pull-9 hidden-xs">
+  <div class="col-lg-3 col-lg-pull-9">
       <h3>About <%= @user.first_name %></h3>
       <p><%= @user.about %></p>
   </div>
