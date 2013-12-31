@@ -4,7 +4,7 @@
       <!-- profile pic -->
       <div>
         <% if @user.user_image.present? %>
-            <%= image_tag @user.user_image.url(:medium).to_s %>
+            <%= image_tag @user.user_image.url(:medium).to_s, :class => 'img-thumbnail' %>
         <% else %>
           <img src="http://dummyimage.com/250x300&text=Add a profile picture!" alt="User Profile" /> 
         <% end %>
@@ -45,7 +45,7 @@
       <div class="row post">
         <!-- post image -->
         <div class="col-xs-2 col-lg-4">
-          <%= image_tag weigh_in.weigh_in_image.url(:thumb) %>
+          <%= image_tag weigh_in.weigh_in_image.url(:thumb), :class => 'img-rounded' %>
         </div>
         <!-- post content -->
         <div class="col-xs-10 col-lg-8">
