@@ -40,20 +40,27 @@
 /*Row 2*/
   /*post text*/
   .post {
-    margin-top: 25px;
     margin-right: 0px;
     border: #886C30 solid 1px;
     outline: #886C30 solid 2px;
     margin-top: 5px;
+    margin-left: 0px;
   }
   .post p {
     font-size: 30px;
     text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
   }
   .row.keep-on {
     display: inline-block;
     text-align: center;
     margin-top: 30px;
+  }
+  @media(max-width:767px){
+    .row.keep-on {
+      margin-top: 0px;
+    }
   }
   p.keep-on {
     font-size: 15px;
@@ -63,6 +70,8 @@
   button.keep-on {
     color: #E9E9C6;
     background-color: #886C30;
+    margin-top: 10px;
+    margin-bottom: 2px;
   }
   /*post image*/
   .post-pic {
