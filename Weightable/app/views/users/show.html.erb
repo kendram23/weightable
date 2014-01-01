@@ -6,7 +6,7 @@
         <% if @user.user_image.present? %>
             <%= image_tag @user.user_image.url(:medium).to_s, :class => 'img-thumbnail' %>
         <% else %>
-          <img src="http://dummyimage.com/250x300&text=Add a profile picture!" alt="User Profile" /> 
+          <img src="http://dummyimage.com/250x300&text=Add a profile picture!" alt="User Profile" class="img-responsive" alt="Responsive image"/> 
         <% end %>
       </div>
       <!-- user's name -->
@@ -31,7 +31,7 @@
       <% if current_user.id == @user.id && @user.goal_weight != nil %>
         <div class="row">
           <div class="col-xs-12 weight-check-btn">
-            <a href='/weigh_ins/new'><img src = "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTegOpHN8p5sWDIibx9Tsptu3KO-WfG95mdzP8JlJFNIVzbS7zo"></a>
+            <a href='/weigh_ins/new'><img src = "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTegOpHN8p5sWDIibx9Tsptu3KO-WfG95mdzP8JlJFNIVzbS7zo" class="img-responsive" alt="Responsive image"></a>
           </div>
         </div>
       <% end %>
@@ -44,8 +44,6 @@
       <!-- post 1 -->
       <div class="row post">
         <!-- post image -->
-        <div class="col-xs-2 col-lg-4 post-pic">
-          <img src="http://placekitten.com/140/140">
         <div class="col-xs-2 col-lg-4">
           <%= image_tag weigh_in.weigh_in_image.url(:thumb), :class => 'img-rounded' %>
         </div>
@@ -81,5 +79,5 @@
       <h3>About <%= @user.first_name %></h3>
       <p><%= @user.about %></p>
   </div>
-</div>
+
 

@@ -16,16 +16,26 @@
   .status {
     text-align: center;
     font-size: 40px;
+    margin-top: -40px;
+  }
+  @media(max-width:767px){
+    .status{
+    font-size: 20px;
+    margin-top: -70px;
+    }
   }
   /*large button*/
   .weight-check-btn {
     width: 100%;
     text-align: center;
+    margin-top: -40px;
+    padding-bottom: 20px;
   }
-  .btn.weight-check-btn {
-    width: 50%;
-    color: #E9E9C6;
-    background-color: #886C30;
+  @media(max-width:767px){
+    .weight-check-btn{
+      margin-top: -80px;
+      padding-top: 5px;
+    }
   }
 /*Row 2*/
   /*post text*/
@@ -69,8 +79,6 @@
     height: 100%;
     width: 100%;
   }
-
-// teammate's work
 
 .index_user {
   width: 95%;
