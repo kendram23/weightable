@@ -4,9 +4,9 @@
 
 <body>
 <div id= "index_background">
-<div id= "index_text_background"
-<strong><h1>THE GANG</h1></strong>
-</div>
+  <div id= "index_text_background"
+    <strong><h1>THE GANG</h1></strong>
+  </div>
 </div>
 
 </br>
@@ -16,22 +16,23 @@
 <%= will_paginate @users %>
 <% @users.each do |user| %>
   
-  <div>
-        <%= image_tag user.user_image %>
+  <div class='row'>
+    <div class="index_user">
+      <div class='col-sm-2 col-xs-3'>
+        <%= image_tag user.user_image.url(:small), :class => 'img-rounded' %>
+      </div>
+      <div class='col-sm-8 col-xs-9'>
+        <h4><%= link_to user.name, user_path(user.id)%></h4>
+        <%= user.about.truncate(50) %>
+      </div>
+    </div>
   </div>
-</br>
-<div class= "index_user">  
-  <%= link_to user.name, user_path(user.id) %>
-</br>
-  <%= user.about.truncate(50) %>
-</br>
-</div>
 <% if user != @users.last%>
-<p>_____________________________________</p>
 <%else%>
 </br>
 </br>
 <% end%>
 <% end %>
+<%= will_paginate @users %>
 </body>
 
