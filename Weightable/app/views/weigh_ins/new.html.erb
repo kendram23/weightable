@@ -1,8 +1,8 @@
 <div class="row">
-  <div class="col-lg-4">
-    <img href="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTegOpHN8p5sWDIibx9Tsptu3KO-WfG95mdzP8JlJFNIVzbS7zo">
+  <div class="col-lg-6">
+    <img src="http://1.bp.blogspot.com/_5vmqQqvvTpQ/TPeo8Lk9LkI/AAAAAAAAAME/G0RLkfubh04/s1600/erectile-dysfunction-s15-man-on-scale.jpg" class="img-responsive" alt="Responsive image">
   </div>
-  <div class="col-lg-8">
+  <div class="col-lg-6">
     <div class="weigh_in_header">
       <h1> Time for a Weight Check!</h2>
     </div>
@@ -11,20 +11,19 @@
 
         <%= f.label "How much do you weigh today?" %><br />
         <%= f.text_field :current_weight %>
-
-        <%= f.label :weigh_in_image %>
+        <br />
+        <br />
+        <%= f.label "Add an image for this weigh in" %>
         <%= f.file_field :weigh_in_image %>
 
         <% f.hidden_field :user_id %>
-
+        <br />
         <%= f.submit "submit" %>
 
 
       <% end %>
     </div>
   </div>
-<!-- =======
-<% end %> -->
 
 </br>
 </br>
