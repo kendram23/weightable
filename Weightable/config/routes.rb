@@ -4,6 +4,7 @@ Weightable::Application.routes.draw do
 
   resources :users, only: [:show, :index, :edit, :update]
   resources :weigh_ins, only: [:new, :create, :show]
+  resources :friendships
 
   # If user is not signed in, this redirects to sign in  page
   unauthenticated do

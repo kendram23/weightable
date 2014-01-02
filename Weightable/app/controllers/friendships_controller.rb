@@ -9,15 +9,18 @@ class FriendshipsController < ApplicationController
   end
 
   def create
-    @friend = User.find(params[:user.id])
+    @friend = User.find(params[:user_id])
     @friendship_created = current_user.invite(@friend)
+
     if @friendship_created
-      flash.now[:notice] = "A friendship request was sent to #{@friend.name}"
+      flash[:notice] = "A friendship request was sent to #{@friend.name}"
+      redirect_to users_path
     end
   end
 
+
   def approve
-    @friend = User.find(params[:user.id])
+    @friend = User.find(params[:id])
     @friendship_approved = current_user.approve(@friend)
     @friends = current_user.friends
     @pending_invited_by = current_user.pending_invited_by
@@ -25,12 +28,13 @@ class FriendshipsController < ApplicationController
   end
 
   def remove
-    @friend = User.find(params[:user_id])
+    @friend = User.find(params[:id])
     @friendship = current_user.send(:find_any_friendship_with, @friend)
     if @friendship
       @friendship.delete
       @removed = true
       flash.now[:notice] = "This friendship has been deleted"
+    end
   end
 
 end

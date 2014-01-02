@@ -27,6 +27,7 @@
       <div class='col-sm-8 col-xs-9'>
         <h4><%= link_to user.name, user_path(user.id)%></h4>
         <%= user.about.truncate(50) %>
+        <%= link_to "Add friend", friendships_path(:user_id => user), :method => "post", :class => 'btn btn-mini' %>
       </div>
     </div>
   </div>
