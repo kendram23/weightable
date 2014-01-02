@@ -6,7 +6,7 @@
         <% if @user.user_image.present? %>
             <%= image_tag @user.user_image.url(:medium).to_s, :class => 'img-thumbnail' %>
         <% else %>
-          <img src="http://dummyimage.com/250x300&text=Add a profile picture!" alt="User Profile" /> 
+          <img src="http://dummyimage.com/250x300&text=Add a profile picture!" alt="User Profile" class="img-responsive" alt="Responsive image"/> 
         <% end %>
       </div>
       <!-- user's name -->
@@ -31,7 +31,7 @@
       <% if current_user.id == @user.id && @user.goal_weight != nil %>
         <div class="row">
           <div class="col-xs-12 weight-check-btn">
-            <a href='/weigh_ins/new'><img src = "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTegOpHN8p5sWDIibx9Tsptu3KO-WfG95mdzP8JlJFNIVzbS7zo"></a>
+            <a href='/weigh_ins/new'><img src = "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTegOpHN8p5sWDIibx9Tsptu3KO-WfG95mdzP8JlJFNIVzbS7zo" class="img-responsive" alt="Responsive image"></a>
           </div>
         </div>
       <% end %>
@@ -63,10 +63,10 @@
           </div>
           <!-- keep on truckin -->
           <div class="row keep-on">
-            <div class="col-lg-9">
+            <div class="col-lg-11">
               <p class="keep-on"><strong>6</strong> buckaroos have said "Keep on Truckin!"</p>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-1">
               <button type="button" class="btn btn-sm keep-on">Keep On Truckin!</button>
             </div>
           </div> <!-- end keep on truckin -->
@@ -79,5 +79,5 @@
       <h3>About <%= @user.first_name %></h3>
       <p><%= @user.about %></p>
   </div>
-</div>
+
 
