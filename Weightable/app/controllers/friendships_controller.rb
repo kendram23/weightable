@@ -33,7 +33,7 @@ class FriendshipsController < ApplicationController
     if @friendship
       @friendship.delete
       @removed = true
-      flash[:notice] = "This friendship has been deleted"
+      flash[:notice] = "This friendship request has been denied"
       redirect_to users_path
     end
   end
