@@ -16,7 +16,7 @@ class WeighInsController < ActionController::Base
       if @weigh_in.save
         format.html {redirect_to user_path(current_user.id), notice: 'WeighIn was succesfully created.' }
       else
-        format.html { render action: 'new' }
+        format.html {redirect_to user_path(current_user.id), notice: 'You can only have one weigh in per day.' }
       end
     end
   end

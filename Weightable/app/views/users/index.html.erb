@@ -14,10 +14,11 @@
 </br>
 </br>
 
-</br>
+<!-- Add in page splits at 20 users -->
 <%= will_paginate @users %>
+
+<!-- List of current users -->
 <% @users.each do |user| %>
-  
   <div class='row'>
     <div class="index_user">
       <div class='col-sm-2 col-xs-3'>

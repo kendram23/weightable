@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   # Used to determine the goal in the weighin model
   # Will allow user to only post 1/day
     def today
-      where(:created_at => (Time.now.beggining_of_day..Time.now))
+      where(:created_at => (Time.now.beginning_of_day..Time.now))
     end
   end
   
