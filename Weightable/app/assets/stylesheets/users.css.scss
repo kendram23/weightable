@@ -2,6 +2,92 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*Row 1*/
+  /*user's name*/
+  .name p {
+    margin-top: 10px;
+    text-align: center;
+  }
+  /*status & weight check-in column*/
+  .first .row {
+    margin-top: 70px
+  }
+  /*status statement*/
+  .status {
+    text-align: center;
+    font-size: 40px;
+    margin-top: -40px;
+  }
+  @media(max-width:767px){
+    .status{
+    font-size: 20px;
+    margin-top: -70px;
+    }
+  }
+  /*large button*/
+  .weight-check-btn {
+    width: 100%;
+    text-align: center;
+    margin-top: -40px;
+    padding-bottom: 20px;
+  }
+  @media(max-width:767px){
+    .weight-check-btn{
+      margin-top: -80px;
+      padding-top: 5px;
+    }
+  }
+/*Row 2*/
+  /*post text*/
+  .post {
+    margin-right: 0px;
+    border: #886C30 solid 1px;
+    outline: #886C30 solid 2px;
+    margin-top: 5px;
+    margin-left: 0px;
+  }
+  .post p {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+  .row.keep-on {
+    display: inline-block;
+    text-align: center;
+    margin-top: 30px;
+  }
+  @media(max-width:767px){
+    .row.keep-on {
+      margin-top: 0px;
+    }
+  }
+  p.keep-on {
+    font-size: 15px;
+    text-align: center;
+    padding-top: 5px;
+  }
+  button.keep-on {
+    color: #E9E9C6;
+    background-color: #886C30;
+    margin-top: 10px;
+    margin-bottom: 2px;
+  }
+  /*post image*/
+  .post-pic {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-left: 1px;
+    padding: 0px;
+    border: #886C30 solid 2px;
+    width: 148px;
+    height: 148px;
+  }
+  .post img {
+    padding: 5px;
+    height: 100%;
+    width: 100%;
+  }
 
 .index_user {
   width: 95%;
