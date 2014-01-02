@@ -19,22 +19,29 @@
 
 <!-- List of current users -->
 <% @users.each do |user| %>
-  <div class='row'>
-    <div class="index_user">
-      <div class='col-sm-2 col-xs-3'>
-        <%= image_tag user.user_image.url(:small), :class => 'img-rounded' %>
-      </div>
-      <div class='col-sm-8 col-xs-9'>
-        <h4><%= link_to user.name, user_path(user.id)%></h4>
-        <%= user.about.truncate(50) %>
+  <% if current_user != user %>
+    <div class='row'>
+      <div class="index_user">
+        <div class='col-sm-2 col-xs-3'>
+          <%= image_tag user.user_image.url(:small), :class => 'img-rounded' %>
+        </div>
+        <div class='col-sm-8 col-xs-9'>
+          <h4><%= link_to user.name, user_path(user.id)%></h4>
+          <%= user.about.truncate(50) %>
+          <% if current_user.friend_with?(user) %>
+            <p>Friends</p>
+          <% elsif current_user.invited?(user) %>
+            <p>Friendship Pending</p>
+          <% elsif current_user.invited_by?(user) %>
+            <%= link_to "Accept Friend", friendship_path(user), :method => "put", :class => 'btn btn-mini' %>
+            <%= link_to "Decline Friend", friendship_path(user), :method => 'delete', :class => 'btn btn-mini' %>
+          <% else %>
+            <%= link_to "Add friend", friendships_path(:user_id => user), :method => "post", :class => 'btn btn-mini' %>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
-<% if user != @users.last%>
-<%else%>
-</br>
-</br>
-<% end%>
+  <% end %>
 <% end %>
 <%= will_paginate @users %>
 </body>
