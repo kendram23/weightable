@@ -27,7 +27,15 @@
       <div class='col-sm-8 col-xs-9'>
         <h4><%= link_to user.name, user_path(user.id)%></h4>
         <%= user.about.truncate(50) %>
-        <%= link_to "Add friend", friendships_path(:user_id => user), :method => "post", :class => 'btn btn-mini' %>
+        <% if current_user.friend_with?(user) %>
+          <p>Friends</p>
+        <% elsif current_user.invited?(user) %>
+          <p>Friendship Pending</p>
+        <% elsif current_user.invited_by?(user) %>
+          <p class='btn btn-mini'>Approve Friendship</p>
+        <% else %>
+          <%= link_to "Add friend", friendships_path(:user_id => user), :method => "post", :class => 'btn btn-mini' %>
+        <% end %>
       </div>
     </div>
   </div>
