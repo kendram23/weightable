@@ -26,7 +26,6 @@
   }
   /*large button*/
   .weight-check-btn {
-    width: 100%;
     text-align: center;
     margin-top: -40px;
     padding-bottom: 20px;
@@ -35,6 +34,9 @@
     .weight-check-btn{
       margin-top: -80px;
       padding-top: 5px;
+    }
+    .weight-check-btn img {
+      width: 80%;
     }
   }
 /*Row 2*/
