@@ -40,6 +40,7 @@
 <!-- row 2 -->
 <div class="row">
   <div class="col-lg-9 col-lg-push-3">
+  <% if current_user.friend_with?(@user) || current_user == @user %>
     <% @user.weigh_ins.each do |weigh_in| %>
       <!-- post 1 -->
       <div class="row post">
@@ -73,11 +74,28 @@
         </div> <!-- end post content -->
       </div> <!-- end post -->
     <% end %>
+    <% else %>
+      <h3>You need to be connected with <%= @user.name %> to view their checkins </h3>
+    <% end %>
   </div>
+
 <!-- start user about section -->
   <div class="col-lg-3 col-lg-pull-9">
+    <% if current_user.friend_with?(@user) %>
+      <p>Friends</p>
+    <% elsif current_user.invited?(@user) %>
+      <p>Friendship Pending</p>
+    <% elsif current_user.invited_by?(@user) %>
+      <%= link_to "Accept Friend", friendship_path(@user), :method => "put", :class => 'btn btn-mini' %>
+      <%= link_to "Decline Friend", friendship_path(@user), :method => 'delete', :class => 'btn btn-mini' %>
+    <% else %>
+      
+    <% end %>
       <h3>About <%= @user.first_name %></h3>
       <p><%= @user.about %></p>
+      <h4>My Weightable Friends</h4>
+      <% @user.friends.each do |friend| %>
+        <%= link_to friend.name, user_path(friend.id) %>
+      </br>
+      <% end %>
   </div>
-
-
