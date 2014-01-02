@@ -76,6 +76,17 @@
   </div>
 <!-- start user about section -->
   <div class="col-lg-3 col-lg-pull-9">
+    <% if current_user.friend_with?(@user) %>
+      <p>Friends</p>
+    <% elsif current_user.invited?(@user) %>
+      <p>Friendship Pending</p>
+    <% elsif current_user.invited_by?(@user) %>
+      <%= link_to "Accept Friend", friendship_path(@user), :method => "put", :class => 'btn btn-mini' %>
+      <%= link_to "Decline Friend", friendship_path(@user), :method => 'delete', :class => 'btn btn-mini' %>
+    <% elsif current_user == @user %>
+    <% else %>
+      <%= link_to "Add friend", friendships_path(:user_id => @user), :method => "post", :class => 'btn btn-mini' %>
+    <% end %>
       <h3>About <%= @user.first_name %></h3>
       <p><%= @user.about %></p>
       <h4>My Weightable Friends</h4>
@@ -84,5 +95,3 @@
       </br>
       <% end %>
   </div>
-
-

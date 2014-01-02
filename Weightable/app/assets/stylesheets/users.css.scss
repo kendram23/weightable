@@ -82,13 +82,10 @@
     margin-left: 1px;
     padding: 0px;
     border: #886C30 solid 2px;
-    width: 148px;
-    height: 148px;
+
   }
   .post img {
     padding: 5px;
-    height: 100%;
-    width: 100%;
   }
 
 .index_user {
@@ -116,5 +113,6 @@
 }
 
 body {
-font-family: 'Alegreya SC', serif;	
+  font-family: 'Alegreya SC', serif;
+  padding-bottom: 20px;
 }
