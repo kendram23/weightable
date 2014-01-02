@@ -78,6 +78,11 @@
   <div class="col-lg-3 col-lg-pull-9">
       <h3>About <%= @user.first_name %></h3>
       <p><%= @user.about %></p>
+      <h4>My Weightable Friends</h4>
+      <% @user.friends.each do |friend| %>
+        <%= link_to friend.name, user_path(friend.id) %>
+      </br>
+      <% end %>
   </div>
 
 
