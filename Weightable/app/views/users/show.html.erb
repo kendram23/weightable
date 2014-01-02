@@ -75,10 +75,10 @@
       </div> <!-- end post -->
     <% end %>
     <% else %>
-  <h3>You need to be connected with <%= @user.name %> to view their checkins </h3>
-  <%= link_to "Add friend", friendships_path(:user_id => @user), :method => "post", :class => 'btn btn-mini' %>
-<% end %>
+      <h3>You need to be connected with <%= @user.name %> to view their checkins </h3>
+    <% end %>
   </div>
+
 <!-- start user about section -->
   <div class="col-lg-3 col-lg-pull-9">
     <% if current_user.friend_with?(@user) %>
