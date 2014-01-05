@@ -27,6 +27,7 @@
             <% end %>
           </h2>
         </div>
+        <div id="container" style="width:100%; height:400px;"></div>
       </div>
       <% if current_user.id == @user.id && @user.goal_weight != nil %>
         <div class="row">
@@ -99,3 +100,42 @@
       </br>
       <% end %>
   </div>
+
+  <script>
+$(function () {
+  $('#container').highcharts({
+      title: {
+          text: "'s 2014 Weightloss",
+          x: -20 //center
+      },
+      xAxis: {
+          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+              'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      },
+      yAxis: {
+          title: {
+              text: 'Weight'
+          },
+          plotLines: [{
+              value: 0,
+              width: 1,
+              color: '#808080'
+          }]
+      },
+      tooltip: {
+          valueSuffix: '°C'
+      },
+      legend: {
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'middle',
+          borderWidth: 0
+      },
+      series: [{
+          name: 'Goal 1',
+          data: [<%= @data %>
+            ]
+      }]
+  });
+});
+  </script>

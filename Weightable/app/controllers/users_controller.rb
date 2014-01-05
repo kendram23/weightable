@@ -20,6 +20,14 @@ class UsersController < ApplicationController
     redirect_to user_path
   end
 
+  def weight_chart
+    @data = []
+    @user.weigh_ins.each do |weight|
+      @data << (weight.current_weight)
+    end
+    @data = @data.join(", ")
+  end
+
   private
 
     # Use callbacks to share common setup or constraints between actions.

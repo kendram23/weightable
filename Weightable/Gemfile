@@ -34,6 +34,10 @@ gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
 
+# Use Highchart for graphing
+gem 'highcharts-rails', '3.0.7'
+
+# Use Amistad for Friendship Model
 gem 'amistad'
 
 # Paginate for user index
