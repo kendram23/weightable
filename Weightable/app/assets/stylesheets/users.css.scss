@@ -91,19 +91,19 @@
 .index_user {
   width: 90%;
   height: 125px;
-  background-color: white;
+  background-color: #faf9f5;
   box-shadow: 10px 10px 5px #888888;
-  margin: 1em auto;
+  margin: 3em auto;
   padding: .5em;
 }
 
 #index_background {
-  background-image: url(http://home-improvement-review.com/wp-content/uploads/2013/11/light-wood-background-wallpaper--1785-wallpaper-palloc-wtdiok7d.jpg); 
+  background-image: url(http://th09.deviantart.net/fs70/PRE/i/2013/173/0/7/wood_texture_by_mxronin-d6a7w5x.jpg); 
   background-position: top center;
   width: 15.625em;
   height: 3.25em;	
   font-size: x-large;
-  color: yellow;
+  color: #f1eeda;
   text-align:center;
   position:absolute;
   left:0;
@@ -111,6 +111,12 @@
   margin-left:auto;
   margin-right:auto;	
 }
+
+  @media(min-width:767px){
+    div.container {
+      min-height: 640px;
+    }
+  }
 
 body {
   font-family: 'Alegreya SC', serif;
