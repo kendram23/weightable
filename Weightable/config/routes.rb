@@ -6,6 +6,10 @@ Weightable::Application.routes.draw do
   resources :weigh_ins, only: [:new, :create, :show]
   resources :friendships
 
+
+
+  get "/users/:id/success", to: 'users#success', as: "success"  
+
   # If user is not signed in, this redirects to sign in  page
   unauthenticated do
     root to: 'layouts#home'

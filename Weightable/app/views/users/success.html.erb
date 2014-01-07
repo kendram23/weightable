@@ -1,0 +1,10 @@
+<h1> Congratulations! Things that are awesome now includes you.  </h1>
+
+<%= form_for @user do |f| %>
+<%= f.label "Would you like to set a new goal?" %><br />
+<%= f.text_field :goal_weight %>
+<br/>
+<br/>
+<br/>
+<%= f.submit "submit" %>
+<%end%>

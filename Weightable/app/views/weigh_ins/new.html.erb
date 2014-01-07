@@ -2,27 +2,34 @@
   <div class="col-lg-6">
     <img src="http://1.bp.blogspot.com/_5vmqQqvvTpQ/TPeo8Lk9LkI/AAAAAAAAAME/G0RLkfubh04/s1600/erectile-dysfunction-s15-man-on-scale.jpg" class="img-responsive" alt="Responsive image">
   </div>
-  <div class="col-lg-6">
-    <div class="weigh_in_header">
-      <h1> Time for a Weight Check!</h2>
+  <div class="col-lg-6" id= "content">
+    <div id= "weigh_in">
+      <div class="weigh_in_header">
+        <h1> Time for a Weight Check!</h2>
+      </div>
+
+      <div class="weigh_in-form">
+        <%= form_for @weigh_in do |f| %>
+
+          <%= f.label "How much do you weigh today?" %><br />
+          <%= f.text_field :current_weight %>
+          <br />
+          <br />
+          <%= f.label "Add an image for this weigh in" %>
+          <%= f.file_field :weigh_in_image %>
+
+          <% f.hidden_field :user_id %>
+          <br />
+          <%= f.submit "submit" %>
+        <% end %>
+      </div>
     </div>
-    <div class="weigh_in-form">
-      <%= form_for @weigh_in do |f| %>
 
-        <%= f.label "How much do you weigh today?" %><br />
-        <%= f.text_field :current_weight %>
-        <br />
-        <br />
-        <%= f.label "Add an image for this weigh in" %>
-        <%= f.file_field :weigh_in_image %>
+    <div id= "success">
+    
+     
+    <div> 
 
-        <% f.hidden_field :user_id %>
-        <br />
-        <%= f.submit "submit" %>
-
-
-      <% end %>
-    </div>
   </div>
 
 </br>
@@ -45,7 +52,5 @@
 </br>
 </br>
 </br>
-</br>
-</br>
-</br>
+
 
