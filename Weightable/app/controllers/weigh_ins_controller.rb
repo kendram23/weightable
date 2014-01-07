@@ -10,13 +10,23 @@ class WeighInsController < ActionController::Base
   end
 
   def create
+    @user = User.find(current_user)
     @weigh_in = current_user.weigh_ins.build(weigh_in_params)
     
+
+
     respond_to do |format|
-      if @weigh_in.save
-        format.html {redirect_to user_path(current_user.id), notice: 'WeighIn was succesfully created.' }
+      
+      if  @weigh_in.save 
+          if (@user.goal_weight - @weigh_in.current_weight) <= 0 
+
+           format.html {redirect_to success_path(current_user.id), notice: 'WeighIn was succesfully created.' }
+          
+          else  
+           format.html {redirect_to user_path(current_user.id), notice: 'WeighIn was succesfully created.' }
+         end
       else
-        format.html {redirect_to user_path(current_user.id), notice: 'You can only have one weigh in per day.' }
+      format.html {redirect_to user_path(current_user.id), notice: 'You can only have one weigh in per day.' }
       end
     end
   end
