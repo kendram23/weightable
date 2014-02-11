@@ -40,4 +40,10 @@
     border: 10px solid black;
   }
 
-  
+.col-centered {
+    text-align:center;
+}
+
+.col-centered form {
+    display:inline-block;
+} 

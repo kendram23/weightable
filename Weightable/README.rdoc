@@ -1,28 +1,26 @@
-== README
+Weightable
+-----------------
+-----------------
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Weightable is a weight loss application designed for men. This isn't no Jenny Craig! It's for real men... looking to git 'er done!
 
-Things you may want to cover:
+Weightable allows a user to register a daily weighin, with picture. Set weight goals for themselves. Friend other users on the site, and recieve "Keep on Trucking"'s, the equivalent of the Facebook like, on their progress. 
 
-* Ruby version
+Technologies
+----------------
 
-* System dependencies
+* Rails 4.02
 
-* Configuration
+* PostgreSQL Database
 
-* Database creation
+* Devise for user authentication
 
-* Database initialization
+* JQuery - DOM traversal
 
-* How to run the test suite
+* Amistad gem for friendships
 
-* Services (job queues, cache servers, search engines, etc.)
+* CarrierWave and Rmagick for image upload and manipulation.
 
-* Deployment instructions
-
-* ...
+* Will-paginate gem for pagination.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
