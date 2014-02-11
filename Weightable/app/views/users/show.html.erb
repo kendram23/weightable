@@ -57,7 +57,7 @@
                 <% if weigh_in.created_at.to_date == Date.today %>
                     Today I weighed <%= weigh_in.current_weight %> lbs!
                 <% else %>
-                  On <%= weigh_in.created_at.to_formatted_s(:short) %> I weighed <%= weigh_in.current_weight %> lbs
+                  On <%= weigh_in.created_at.to_date.to_formatted_s(:rfc822) %>, I weighed <%= weigh_in.current_weight %> lbs
                 <% end %>
               </p>
             </div>
@@ -95,7 +95,8 @@
       <p><%= @user.about %></p>
       <h4>My Weightable Friends</h4>
       <% @user.friends.each do |friend| %>
-        <%= link_to friend.name, user_path(friend.id) %>
+        <img src="<%= friend.user_image%>" height="42" width="42">
+        <%= link_to friend.name, user_path(friend.id) %> 
       </br>
       <% end %>
   </div>
