@@ -26,11 +26,14 @@ ActiveRecord::Schema.define(version: 20131230180229) do
   add_index "friendships", ["friendable_id", "friend_id"], name: "index_friendships_on_friendable_id_and_friend_id", unique: true, using: :btree
 
   create_table "truckins", force: true do |t|
-    t.integer  "users_id"
-    t.integer  "weigh_ins_id"
+    t.integer  "user_id"
+    t.integer  "weigh_in_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "truckins", ["user_id"], name: "index_truckins_on_user_id", using: :btree
+  add_index "truckins", ["weigh_in_id"], name: "index_truckins_on_weigh_in_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -57,12 +60,11 @@ ActiveRecord::Schema.define(version: 20131230180229) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "weigh_ins", force: true do |t|
-    t.integer  "users_id"
+    t.integer  "user_id"
     t.datetime "datetime"
     t.integer  "current_weight"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
     t.string   "weigh_in_image"
   end
 

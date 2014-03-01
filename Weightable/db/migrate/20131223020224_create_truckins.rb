@@ -1,9 +1,8 @@
 class CreateTruckins < ActiveRecord::Migration
   def change
     create_table :truckins do |t|
-      t.references :users
-      t.references :weigh_ins
-
+      t.references :user, index: true
+      t.references :weigh_in, index: true
       t.timestamps
     end
   end
