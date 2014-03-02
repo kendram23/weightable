@@ -65,13 +65,13 @@
           <!-- keep on truckin -->
           <div class="row">
             <div class="col-lg-11">
-              <p><strong class= "keep_number">0</strong> buckaroos have said "Keep on Truckin!"</p>
+              <p><strong class= "keep_number"><%= weigh_in.like_count%></strong> buckaroos have said "Keep on Truckin!"</p>
 
               <input type="hidden" name="truck_in_val" value="<%= weigh_in.id %>">
 
             </div>
             <div class="col-lg-1">
-              <button type="button" class="btn btn-sm truckin_button">Keep On Truckin!</button>
+              <button type="button" class="btn btn-sm truckin_button"><%= link_to "Keep on truckin!!", like_path(:resource_name => weigh_in.class, :resource_id => weigh_in.id), :method => :post%></button>
             </div>
           </div> <!-- end keep on truckin -->
         </div> <!-- end post content -->

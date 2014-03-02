@@ -25,16 +25,6 @@ ActiveRecord::Schema.define(version: 20131230180229) do
 
   add_index "friendships", ["friendable_id", "friend_id"], name: "index_friendships_on_friendable_id_and_friend_id", unique: true, using: :btree
 
-  create_table "truckins", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "weigh_in_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "truckins", ["user_id"], name: "index_truckins_on_user_id", using: :btree
-  add_index "truckins", ["weigh_in_id"], name: "index_truckins_on_weigh_in_id", using: :btree
-
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
