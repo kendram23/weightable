@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   include Amistad::FriendModel
+
+  include Likeable::UserMethods
  
   has_many :truckins, through: :weigh_ins
 

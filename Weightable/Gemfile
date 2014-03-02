@@ -39,6 +39,10 @@ gem 'rmagick'
 
 gem 'amistad'
 
+gem 'likeable'
+
+gem 'redis'
+
 # Paginate for user index
 gem 'will_paginate', '~> 3.0'
 
@@ -52,6 +56,7 @@ end
 group :test, :development do
   gem 'pry-plus'
   gem 'pry-rails'
+  gem 'rspec'
   gem 'hirb'
 end
 

@@ -1,6 +1,7 @@
 class WeighIn < ActiveRecord::Base
 	belongs_to :user
 	has_many :truckins
+  include Likeable
 
   # Allows user to upload an image with weighin
   

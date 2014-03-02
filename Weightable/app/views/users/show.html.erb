@@ -45,7 +45,7 @@
       <!-- post 1 -->
       <div class="row post">
         <!-- post image -->
-        <div class="col-xs-2 col-lg-4">
+        <div class="col-s-0 col-lg-4">
           <%= image_tag weigh_in.weigh_in_image.url(:thumb), :class => 'img-rounded' %>
         </div>
         <!-- post content -->
@@ -63,12 +63,15 @@
             </div>
           </div>
           <!-- keep on truckin -->
-          <div class="row keep-on">
+          <div class="row">
             <div class="col-lg-11">
-              <p class="keep-on"><strong>6</strong> buckaroos have said "Keep on Truckin!"</p>
+              <p><strong class= "keep_number"><%= weigh_in.like_count%></strong> buckaroos have said "Keep on Truckin!"</p>
+
+              <input type="hidden" name="truck_in_val" value="<%= weigh_in.id %>">
+
             </div>
             <div class="col-lg-1">
-              <button type="button" class="btn btn-sm keep-on">Keep On Truckin!</button>
+              <button type="button" class="btn btn-sm truckin_button"><%= link_to "Keep on truckin!!", like_path(:resource_name => weigh_in.class, :resource_id => weigh_in.id), :method => :post%></button>
             </div>
           </div> <!-- end keep on truckin -->
         </div> <!-- end post content -->
